@@ -1,16 +1,67 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro"
+import { Image } from "astro:assets";
+import ianProfile from "@/assets/ian_profile.jpg";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Ian Kollipara">
+    <section class="hero is-link">
+        <div class="hero-body">
+            <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style={{placeItems: "center"}}>
+                <h1 class="title is-1">Ian Kollipara</h1>
+                <h2 class="subtitle is-3">Software Engineer & Educator</h2>
+            </div>
+        </div>
+    </section>
+    <main class="container is-fluid mt-5">
+        <article id="about-me" class="columns">
+            <div class="column is-one-quarter">
+                <figure class="image">
+                    <Image src={ianProfile} alt="Ian Kollipara" style={{borderRadius: "1em"}} />
+                </figure>
+            </div>
+            <div class="column is-flex is-flex-direction-column">
+                <h2 class="title is-3" style={{borderBottom: "2px solid var(--bulma-light)"}}>About Me</h2>
+                <p class="content is-medium">
+                    Hello! My name is Ian Kollipara. I graduated with a B.S. Computer Science as well as a B.S. Ed in Elementary Education.
+                    I am currently pursuing a Master's Degree in Computer Science Education at the University of Nebraska - Lincoln.
+                    My unique background has enabled me to see the world of software engineering through the lens of an educator.
+                    Likewise, my knowledge as a computer scientist has allowed me to bring real-world experience to the classroom.
+                    I am passionate about teaching and learning, and I am always looking for ways to improve my craft.
+                    <br>
+                    <br>
+                    Outside of work, I deeply enjoy playing around with new technologies.
+                    I am particularly interested in web development, and I am always looking for ways to improve my skills.
+                    I am also a huge fan of video games, and I enjoy playing them in my free time.
+                    I am also a huge fan of traveling, and I love exploring the world around me, particularly that of the Great Plains.
+                    <br>
+                    <br>
+                    You can get in touch with me via email at <a href="mailto:ian.kollipara@gmail.com">ian.kollipara@gmail.com</a>.
+                    I am not particularly active on social media, but I try to keep my <a href="https://github.com/ikollipara">GitHub</a> up-to-date.
+                    <br>
+                    <br>
+                    <a href="/documents/CV.pdf" download="ian_kollipara_cv.pdf" class="button is-link">
+                        See my Resume
+                    </a>
+                </p>
+            </div>
+        </article>
+        <article id="projects" class="grid">
+            <div style={{border: "1px solid var(--bulma-light)", borderRadius: "1em"}} class="cell p-5" id="connection">
+                <h2 class="title is-4">conneCTION</h2>
+                <p class="subtitle is-4">A place for CS teachers to connect, grow, and learn</p>
+                <a href="https://connection.unl.edu" class="link">Go To...</a>
+            </div>
+            <div style={{border: "1px solid var(--bulma-light)", borderRadius: "1em"}} class="cell p-5" id="django-meili">
+                <h2 class="title is-4">Django-Meili</h2>
+                <p class="subtitle is-4">A custom integration of Meilisearch and Django. Prioritizes building on Django conventions</p>
+                <a href="https://github.com/ikollipara/django-meili" class="link">Go To...</a>
+            </div>
+            <div style={{border: "1px solid var(--bulma-light)", borderRadius: "1em"}} class="cell p-5" id="monadic-error">
+                <h2 class="title is-4">Monadic Error</h2>
+                <p class="subtitle is-4">A custom implementation of the Maybe and Either monad in Python.</p>
+                <a href="https://github.com/ikollipara/monadic-error" class="link">Go To...</a>
+            </div>
+        </article>
+    </main>
+</MainLayout>
